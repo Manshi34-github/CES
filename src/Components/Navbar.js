@@ -72,16 +72,6 @@ function SideMenu() {
 }
 
 const Navbar = ({ isShowJoin, setIsShowJoin }) => {
-  const [isShowLogin, setIsShowLogin] = useState(true);
-  const handleClick = () => {
-    if (isShowLogin) {
-      setIsShowJoin(!isShowJoin);
-    }
-    setIsShowLogin((isShowLogin) => !isShowLogin);
-  };
-  /* const closeLogin = () => {
-    setIsShowLogin(!isShowLogin);
-  }; */
   const [isSideMenuOpen, setisSideMenuOpen] = useState(false);
   const showSideMenu = () => {
     isSideMenuOpen ? setisSideMenuOpen(false) : setisSideMenuOpen(true);
