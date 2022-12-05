@@ -151,7 +151,7 @@ const Navbar = ({ isShowJoin, setIsShowJoin }) => {
         </div>
         <div className=" w-full md:inline-flex md:flex-grow justify-end md:w-auto">
           <div className="md:inline-flex cursor-pointer md:w-auto lg:text-lg text-[12px] lg:px-12 px-4 lg:mr-20 mr-3 border-2  border-blue-500 lg:py-2 py-1 rounded-xl text-gray-800 items-center justify-center hover:bg-green-500 hover:text-white">
-            <Link to="/">Register</Link>
+            <Link to="/login">Register</Link>
           </div>
         </div>
       </nav>
@@ -186,9 +186,11 @@ const Navbar = ({ isShowJoin, setIsShowJoin }) => {
           </Link>
         </a>
         <div className=" w-full justify-end">
-          <div className="w-fit px-5 relative left-[186px] text-[15px] top-[18px] border-2 border-blue-500 py-1 rounded-md text-gray-800 items-center justify-center hover:bg-green-500 hover:text-white">
-            <Link to="/">Register</Link>
-          </div>
+          <Link to="/login">
+            <div className="w-fit px-5 relative left-[186px] text-[15px] top-[18px] border-2 border-blue-500 py-1 rounded-md text-gray-800 items-center justify-center hover:bg-green-500 hover:text-white">
+              Register
+            </div>
+          </Link>
         </div>
       </div>
     </div>
