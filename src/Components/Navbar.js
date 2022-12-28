@@ -5,8 +5,18 @@ import CloseIcon from "../Images/close.png";
 import MenuIcon from "../Images/menu.png";
 import Logo_mobile from "../Images/iit bhu logo.png";
 import "../index.css";
+import { auth } from "./config";
+import { signOut } from "firebase/auth";
 
 function SideMenu() {
+  // const user = auth.currentUser;
+  // console.log(user);
+  // const Logout = async (e) => {
+  //   e.preventDefault();
+  //   await signOut(auth);
+  //   window.location.reload(false);
+  // };
+
   return (
     <div className="fixed h-screen w-[75%] md:hidden bg-white z-50 top-[60px]">
       <div className="w-full items-start flex flex-col">
@@ -75,6 +85,14 @@ const Navbar = ({ isShowJoin, setIsShowJoin }) => {
   const [isSideMenuOpen, setisSideMenuOpen] = useState(false);
   const showSideMenu = () => {
     isSideMenuOpen ? setisSideMenuOpen(false) : setisSideMenuOpen(true);
+  };
+
+  const user = auth.currentUser;
+  console.log(user);
+  const Logout = async (e) => {
+    e.preventDefault();
+    await signOut(auth);
+    window.location.reload(false);
   };
 
   return (
@@ -149,11 +167,19 @@ const Navbar = ({ isShowJoin, setIsShowJoin }) => {
             </NavLink>
           </div>
         </div>
-        <div className=" w-full md:inline-flex md:flex-grow justify-end md:w-auto">
-          <div className="md:inline-flex cursor-pointer md:w-auto lg:text-lg text-[12px] lg:px-12 px-4 lg:mr-20 mr-3 border-2  border-blue-500 lg:py-2 py-1 rounded-xl text-gray-800 items-center justify-center hover:bg-green-500 hover:text-white">
-            <Link to="/login">Register</Link>
+        {user ? (
+          <div className=" w-full md:inline-flex md:flex-grow justify-end md:w-auto">
+            <div className="md:inline-flex cursor-pointer md:w-auto lg:text-lg text-[12px] lg:px-12 px-4 lg:mr-20 mr-3 border-2  border-blue-500 lg:py-2 py-1 rounded-xl text-gray-800 items-center justify-center hover:bg-green-500 hover:text-white">
+              <div onClick={Logout}>Logout</div>
+            </div>
           </div>
-        </div>
+        ) : (
+          <div className=" w-full md:inline-flex md:flex-grow justify-end md:w-auto">
+            <div className="md:inline-flex cursor-pointer md:w-auto lg:text-lg text-[12px] lg:px-12 px-4 lg:mr-20 mr-3 border-2  border-blue-500 lg:py-2 py-1 rounded-xl text-gray-800 items-center justify-center hover:bg-green-500 hover:text-white">
+              <Link to="/login">Register</Link>
+            </div>
+          </div>
+        )}
       </nav>
       <div className="h-[60px] fixed w-full bg-white z-50 flex">
         <button
@@ -185,13 +211,21 @@ const Navbar = ({ isShowJoin, setIsShowJoin }) => {
             <img src={Logo_mobile} alt="logo" className="h-10 w-10"></img>
           </Link>
         </a>
-        <div className=" w-full justify-end">
-          <Link to="/login">
+        {user ? (
+          <div onClick={Logout} className=" w-full justify-end">
             <div className="w-fit px-5 relative left-[186px] text-[15px] top-[18px] border-2 border-blue-500 py-1 rounded-md text-gray-800 items-center justify-center hover:bg-green-500 hover:text-white">
-              Register
+              Logout
             </div>
-          </Link>
-        </div>
+          </div>
+        ) : (
+          <div className=" w-full justify-end">
+            <Link to="/login">
+              <div className="w-fit px-5 relative left-[186px] text-[15px] top-[18px] border-2 border-blue-500 py-1 rounded-md text-gray-800 items-center justify-center hover:bg-green-500 hover:text-white">
+                Register
+              </div>
+            </Link>
+          </div>
+        )}
       </div>
     </div>
   );

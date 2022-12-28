@@ -1,9 +1,25 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Navbar from "../Components/Navbar";
 import Footer from "../Components/Footer";
 import BG from "../Images/image.png";
+import { auth, provider } from "../Components/config";
+import { signInWithPopup } from "firebase/auth";
+import { useNavigate } from "react-router-dom";
 
 const Login = () => {
+  const [value, setValue] = useState("");
+  const navigate = useNavigate();
+  const handleSignIn = () => {
+    signInWithPopup(auth, provider).then((data) => {
+      setValue(data.user.email);
+      localStorage.setItem("email", data.user.email);
+      navigate("/");
+    });
+  };
+
+  useEffect(() => {
+    setValue(localStorage.getItem("email"));
+  });
   return (
     <div>
       <Navbar />
@@ -18,7 +34,10 @@ const Login = () => {
             <p>please login only with your institute account</p>
           </div>
           <div class="my-6">
-            <button class="flex w-full justify-center rounded-3xl border-none bg-white p-1 text-black hover:bg-gray-200 sm:p-2">
+            <button
+              onClick={handleSignIn}
+              class="flex w-full justify-center rounded-3xl border-none bg-white p-1 text-black hover:bg-gray-200 sm:p-2"
+            >
               <img
                 src="https://freesvg.org/img/1534129544.png"
                 alt=""
@@ -48,12 +67,12 @@ const Login = () => {
                 />
               </div>
               <div class="mt-4">
-                <label class="mb-2.5 block font-extrabold" for="email">
+                <label class="mb-2.5 block font-extrabold" for="password">
                   Password
                 </label>
                 <input
                   type="password"
-                  id="email"
+                  id="password"
                   class="inline-block w-full rounded-full bg-white p-2.5 leading-none text-black placeholder-indigo-900 shadow"
                 />
               </div>
