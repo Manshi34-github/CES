@@ -11,7 +11,7 @@ import { BsFacebook, BsLinkedin } from "react-icons/bs";
 import { MdEmail } from "react-icons/md";
 import Colon from "../Images/upper colon.png";
 import BG from "../Images/NotableAlumni.png";
-
+import CountUp from 'react-countup';
 
 const Alumni = () => {
   return (
@@ -21,12 +21,28 @@ const Alumni = () => {
           className="flex h-[80vh] bg-origin-border  pt-4 bg-cover bg-blend-darken"
           style={{ backgroundImage: `linear-gradient(rgba(135, 80, 156, 0.4), rgba(135, 80, 156, 0.4)),url(${BG})` }}
         >
-           <div className="md:w-[40%] w-[70%] relative md:top-40 top-20 ml-10">
+           <div className="md:w-[50%] w-[70%] relative md:top-40 top-20 ml-10">
             <div className="text-8xl  text-white font-bold">
               Alumni Perks
-            </div>
+              </div>
+              <div className="countup text-5xl flex flex-row text-fuchsia-200 pt-20 pl-7  font-bold">
+            <h1> 
+              <CountUp start={0} end={100} duration={1} delay={0}/>
+              
+              </h1>
+              
+          </div>
+          <div className="countup text-5xl flex flex-row text-fuchsia-200 pt-20 pl-7  font-bold">
+            <h1> 
+              <CountUp start={0} end={1980} duration={1} delay={0}/>
+              
+              </h1>
+              
+          </div>
+            
             
           </div>
+         
         
       </div>
       <div className="pt-0">
@@ -67,7 +83,7 @@ const Alumni = () => {
                     return (
                       <div className="">
                         <SwiperSlide className="relative left-[59px]">
-                          <div className="w-[75%] bg-white relative top-20 rounded-2xl h-[440px] transition ease-in-out delay-70 bg-white hover:-translate-y-1 hover:scale-110 hover:bg-white duration-200 ">
+                          <div className="w-[75%] mt-10 bg-white relative top-20 rounded-2xl h-[440px] transition ease-in-out delay-70 bg-white hover:-translate-y-1 hover:scale-110 hover:bg-white duration-200 ">
                             <div className="text-center h-[155px] bg-blue-300 rounded-t-2xl">
                               <img
                                 src={alum.picture}
