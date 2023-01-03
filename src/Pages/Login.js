@@ -19,7 +19,8 @@ const Login = () => {
 
   useEffect(() => {
     setValue(localStorage.getItem("email"));
-  });
+  }, []);
+  console.log(value);
   return (
     <div>
       <Navbar />
