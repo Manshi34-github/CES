@@ -1,0 +1,11 @@
+.civil:hover .absolute {
+  visibility: visible;
+
+}
+
+.absolute {
+  visibility: hidden;
+}
+
+  
+  

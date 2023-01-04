@@ -10,8 +10,15 @@ import Contact from "./Pages/Contact";
 import Events from "./Pages/Events";
 import Funds from "./Pages/Funds";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import { useEffect } from "react";
+import AOS from 'aos';
+import 'aos/dist/aos.css';
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+    AOS.refresh();
+  })
   return (
     <div>
       <Router>
