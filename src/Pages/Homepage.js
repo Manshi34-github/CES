@@ -1,7 +1,7 @@
 import React from "react";
 import Navbar from "../Components/Navbar";
 import Hero from "../Images/hero.png";
-import BG from "../Images/iitbhu.png";
+import BG from "../Images/image.png";
 import Footer from "../Components/Footer";
 
 const Homepage = () => {
@@ -13,7 +13,7 @@ const Homepage = () => {
           className="flex h-[90vh] bg-cover bg-blend-darken"
           style={{ backgroundImage: `url(${BG})` }}
         >
-          <div className="md:w-[30%] w-[70%] relative md:top-40 top-20 ml-10">
+          <div className="md:w-[40%] w-[70%] relative md:top-40 top-20 ml-10 md:ml-16">
             <div className="text-3xl  text-white font-bold">
               The Society of Civil Engineers
             </div>
@@ -32,7 +32,7 @@ const Homepage = () => {
         </div>
         {/*<img src={Vector} alt="" className="absolute -top-10 z-10" />  */}
       </div>
-      <div className="mt-4 mb-20">
+      <div className="mt-10 mb-20">
         <div className="text-4xl text-center font-bold">About Us</div>
         <div className="md:mx-48 mx-5 mt-10">
           Lorem ipsum, dolor sit amet consectetur adipisicing elit. Explicabo
