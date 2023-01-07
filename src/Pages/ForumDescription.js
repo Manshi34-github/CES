@@ -8,7 +8,8 @@ const ForumDescription = () => {
   let url = window.location.href;
   let id = url.split("/")[4];
   const data = Data.find((obj) => {
-    return obj.id === id;
+    // eslint-disable-next-line eqeqeq
+    return obj.id == id;
   });
   User.push(data);
 
