@@ -3,6 +3,7 @@ import Navbar from "../Components/Navbar";
 import Hero from "../Images/hero.png";
 import BG from "../Images/image.png";
 import Footer from "../Components/Footer";
+import ImageGallery from "../Components/ImageGallery";
 
 const Homepage = () => {
   return (
@@ -61,6 +62,7 @@ const Homepage = () => {
           laborum et nam officia atque, fugiat harum deleniti placeat natus!
         </div>
       </div>
+      <ImageGallery/>
       <Footer />
     </div>
   );
