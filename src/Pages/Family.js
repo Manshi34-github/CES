@@ -19,7 +19,7 @@ const Family = () => {
                 <div>
                   <div className="">
                     <h1 class="text-3xl font-semibold text-center text-blue-800 capitalize lg:text-4xl ">
-                      {post.year} Year
+                      {post.year} 
                     </h1>
                     <div class="mx-auto mt-2 flex justify-center">
                       <span class="inline-block h-1 w-40 rounded-full bg-blue-500"></span>
