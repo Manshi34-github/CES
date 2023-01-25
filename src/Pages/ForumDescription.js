@@ -7,12 +7,10 @@ const ForumDescription = () => {
   const User = [];
   let url = window.location.href
   let userId = url.split('/')[4];
-  for (let index = 0; index < Data.length; index++) {
-    if (userId === String(Data[index].id)) {
-      User.push(Data[index]);
-      break;
-    }
-  }
+  const data = Data.find((obj) => {
+    return String(obj.id) === userId;
+  })
+  User.push(data);
   const ShowComment = () => {
     let loginToPostComment = document.getElementById('loginToPostComment');
     let commentSection = document.getElementById('commentSection');
@@ -56,12 +54,12 @@ const ForumDescription = () => {
   return (
     <>
       <Navbar />
-      <div>
-        <div className=" ml-10 pt-20 pb-20 flex justify-center">
+      <div className='bg-purple-50'>
+        <div className="pt-20 mx-5 pb-20 flex justify-center">
           {User.map((item) => {
             return (
               <>
-                <div className="w-9/12" key={item.id}>
+                <div className="w-full md:w-9/12" key={item.id}>
                   <div className='pb-10'>
                     <div>
                       <h1 className='text-3xl underline underline-offset-8 decoration-0 decoration-stone-600 text-violet-900 decoration-double text-center ' key={item.id}>{item.title}</h1>
@@ -98,50 +96,50 @@ const ForumDescription = () => {
 
                   <hr className='bg-gray-800 h-0.5 w-113% mt-10' />
                   <div id='commentSection' className='hidden'>
-                    <div className='pt-7'>
-                      <span>
-                        <input id='inputElm' type="text" placeholder='Write here' className='border-gray-500 text-black w-full border-2 inline' />
-                        <div className='text-right'>
-                          <button className='bg-indigo-400 text-black text-right font-semibold border-2 mt-2 hover:bg-sky-600 p-0.5' id='post' onClick={HandleClick}>Post Comment</button>
-                        </div>
-                      </span>
-                    </div>
-                    <div id='commentVal' className='pb-3 border-dotted shadow-2xl border-2 border-sky-500 p-1 rounded mt-5'>
-                      <div id={item.id}>
-
-                        <div className='bg-gradient-to-r from-teal-800 to-gray-50 text-gray-200 pl-3'>
-                          <h1 className='font-bold'>Guest User</h1>
-                          <span className='text-sm'>on {item.date} at 09:55PM </span>
-                        </div>
-                        <hr />
-
-                        <div className='pt-5'></div>
-                        <div className='bg-gray-100'>
-
-                          <div className='text-black'>
-                            <div id='paragraph'>
-                              Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat, obcaecati fuga quod dolorem nemo quae at sapiente unde quas vel incidunt illo impedit iste vitae cumque sed delectus doloribus rem quidem nihil maxime ipsam? Provident minus ad possimus libero quasi voluptas iure sapiente! Autem, nemo libero animi laborum reprehenderit mollitia!
-                            </div>
-                            <div id='replyText'>
-
-                            </div>
-
+                      <div className='pt-7'>
+                        <span>
+                          <input id='inputElm' type="text" placeholder='Write here' className='border-gray-500 text-black w-full border-2 inline' />
+                          <div className='text-right'>
+                            <button className='bg-indigo-400 text-black text-right font-semibold border-2 mt-2 hover:bg-sky-600 p-0.5' id='post' onClick={HandleClick}>Post Comment</button>
                           </div>
+                        </span>
+                      </div>
+                      <div id='commentVal' className='pb-3 border-dotted shadow-2xl border-2 border-sky-500 p-1 rounded mt-5'>
+                        <div id={item.id}>
 
-                          <div className=''>
-                            <span id='replySpan'>
-                              <input id='replyInput' type='hidden' placeholder='Write here' className=' border-gray-500 mt-5 w-full border-2 inline' />
-                            </span>
-                            <div className='text-right space-x-4'>
-                              <span id='postReply'>
-                                <button className='bg-indigo-400 px-8 font-semibold border-2  mt-1 hover:bg-sky-600' id='replyPostButton' onClick={HandleReplyClick} style={{ display: 'none' }}>Post</button>
-                              </span>
-                              <span className=''>
-                                <button className='bg-indigo-400 border-2 px-6  font-semibold hover:bg-sky-600' onClick={HandleReply} id='reply'>Reply
-                                </button>
-                              </span>
-                            </div>
+                          <div className='bg-gradient-to-r from-teal-800 to-gray-50 text-gray-200 pl-3'>
+                            <h1 className='font-bold'>Guest User</h1>
+                            <span className='text-sm'>on {item.date} at 09:55PM </span>
                           </div>
+                          <hr />
+
+                          <div className='pt-5'></div>
+                          <div className='bg-gray-100'>
+
+                            <div className='text-black'>
+                              <div id='paragraph'>
+                                Lorem ipsum dolor sit, amet consectetur adipisicing elit. Placeat, obcaecati fuga quod dolorem nemo quae at sapiente unde quas vel incidunt illo impedit iste vitae cumque sed delectus doloribus rem quidem nihil maxime ipsam? Provident minus ad possimus libero quasi voluptas iure sapiente! Autem, nemo libero animi laborum reprehenderit mollitia!
+                              </div>
+                              <div id='replyText'>
+
+                              </div>
+
+                            </div>
+
+                            <div className=''>
+                              <span id='replySpan'>
+                                <input id='replyInput' type='hidden' placeholder='Write here' className=' border-gray-500 mt-5 w-full border-2 inline' />
+                              </span>
+                              <div className='text-right space-x-4'>
+                                <span id='postReply'>
+                                  <button className='bg-indigo-400 px-8 font-semibold border-2  mt-1 hover:bg-sky-600' id='replyPostButton' onClick={HandleReplyClick} style={{ display: 'none' }}>Post</button>
+                                </span>
+                                <span className=''>
+                                  <button className='bg-indigo-400 border-2 px-6  font-semibold hover:bg-sky-600' onClick={HandleReply} id='reply'>Reply
+                                  </button>
+                                </span>
+                              </div>
+                            </div>
                         </div>
                       </div>
                     </div>
