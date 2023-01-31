@@ -4,11 +4,6 @@ import Footer from "../Components/Footer";
 import Data from "../Data/EventsData";
 import ImageSlider from "../Components/ImageSlider";
 const Events = () => {
-  const handleAnker = () => {
-    let image = document.getElementById('image');
-    image.setAttribute('disabled');
-    console.log('Disabled');
-  }
   return (
     <div>
       <Navbar />
