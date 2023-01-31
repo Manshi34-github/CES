@@ -8,13 +8,12 @@ import "swiper/css/effect-fade";
 import "swiper/css/mousewheel"
 import "swiper/css/thumbs";
 import "swiper/css/free-mode";
-import '../styles.css'
 import { Navigation, EffectFade, FreeMode, Thumbs, Autoplay } from "swiper";
 import image1 from '../Images/GalleryPhoto/1.jpg'
 import image2 from '../Images/GalleryPhoto/2.jpg'
 import image3 from '../Images/GalleryPhoto/3.jpg'
 import image4 from '../Images/GalleryPhoto/4.jpg'
-import image5 from '../Images/GalleryPhoto/5.jpg'
+import image5 from '../Images/GalleryPhoto/4.jpg'
 const ImageGallery = () => {
     return (
         <div>
@@ -31,12 +30,11 @@ const ImageGallery = () => {
                     "--swiper-navigation-color": "#fff",
                     "--swiper-navigation-size": "25px",
                     "--swiper-animation-speed": "8000",
-                    width: '98%',
-                    border: '2px solid gray',
-                    boxShadow: '6px 6px 8px  gray',
-                    marginBottom: '10px',
-                    borderRadius: '2px'
+                    width:'100%',
+                    height:'100%',
+                    marginBottom:'10px'
                 }}
+  
                 autoplay={true}
                 loop={true}
                 spaceBetween={10}
@@ -46,21 +44,23 @@ const ImageGallery = () => {
                 className="mySwiper2"
             >
                 <SwiperSlide>
-                    <img src={image1} alt=""/>
+                    <img src={image1} alt="" className='md:w-full object-cover'/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={image2} alt=""/>
+                    <img src={image2} alt="" className='md:w-full object-cover'/>
                 </SwiperSlide>
 
                 <SwiperSlide>
-                    <img src={image3} alt=""/>
+                    <img src={image3} alt="" className='md:w-full object-cover'/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={image4} alt=""/>
+                    <img src={image4} alt="" className='md:w-full object-cover'/>
                 </SwiperSlide>
                 <SwiperSlide>
-                    <img src={image5} alt=""/>
+                    <img src={image5} alt="" className='md:w-full object-cover'/>
                 </SwiperSlide>
+
+
             </Swiper>
 
 
