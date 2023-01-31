@@ -41,12 +41,12 @@ const Forum = () => {
             <option value="Information">Information</option>
           </select>
           </span>
-          <span><button type="submit" className="transition ease-in delay-150 border-2 border-blue-800 hover:-translate-y-1 hover:scale-110 hover:bg-indigo-400 duration-100 ml-3 px-4 rounded font-bold" onClick={HandleApply}>Apply</button></span>
+          <span><button type="submit" className="transition ease-in delay-150 border-2 border-blue-800 hover:-translate-y-1 hover:bg-indigo-400 duration-100 ml-3 px-4 rounded font-bold" onClick={HandleApply}>Apply</button></span>
         </div>
 
       
-        <div className=" p-3 flex justify-center">
-          <table className="table-auto p-10 shadow-2xl w-2/3">
+        <div className=" p-5 pt-2 flex justify-center">
+          <table className=" w-full table-auto shadow-2xl md:w-2/3">
             <thead>
               <tr className=" border-2 bg-gradient-to-r from-blue-400 to-stone-200  mt-2 border-zinc-400">
                 <th>Topic</th>
@@ -61,9 +61,9 @@ const Forum = () => {
 
                   <tr id={post.id} key={post.id} >
                     <td>
-                      <Link className="text-sky-500 m-2 mt-3 hover:text-lg hover:bg-blue-200 hover:text-black hover:border rounded" key={post.id} to={"/forum/"+post.id}>{post.title}</Link>
+                      <Link className="text-blue-600  mt-3 hover:bg-blue-200 hover:text-black hover:border rounded-lg " key={post.id} to={"/forum/"+post.id}>{post.title}</Link>
                       <br />
-                      <span className="text-xs m-2 mt-3">Autonomus on Sunday 15:45 PM {post.date}</span>
+                      <span className="text-xs mt-3">Autonomus on Sunday 15:45 PM {post.date}</span>
                     </td>
                     <td>50+</td>
                     <td>{post.date}</td>
