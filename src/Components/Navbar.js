@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import Logo from "../Images/iit bhu logo.png";
+import Logo from "../Images/ceslogo.png";
 import { NavLink, Link } from "react-router-dom";
 import CloseIcon from "../Images/close.png";
 import MenuIcon from "../Images/menu.png";
