@@ -11,7 +11,7 @@ const Contact = () => {
     <div>
       <Navbar />
       <div className="pt-20">
-        <div class="bg-white p-8 rounded-md w-full">
+        <div class="bg-white p-6 rounded-md w-full">
           {Data.map((post) => {
             const students = post.student;
             return (
@@ -46,7 +46,7 @@ const Contact = () => {
                         {students.map((student) => {
                           return (
                             <tr>
-                              <td class="px-5 py-5 border-b border-gray-200 bg-white text-sm">
+                              <td class="px-10 py-5 border-b border-gray-200 bg-white text-sm">
                                 <div class="flex items-center">
                                   <div class="flex-shrink-0 w-10 h-10">
                                     <img
