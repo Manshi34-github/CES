@@ -20,11 +20,10 @@ const ImageGallery = () => {
 
             <Swiper
                   data-aos="fade-down"
-                  data-aos-offset="10"
+                  data-aos-offset="5"
                   data-aos-delay="50"
                   data-aos-duration="800"
                   data-aos-easing="ease-in-out"
-                  data-aos-mirror="true"
                   data-aos-once="false"
                 style={{
                     "--swiper-navigation-color": "#fff",
@@ -32,7 +31,7 @@ const ImageGallery = () => {
                     "--swiper-animation-speed": "8000",
                     width:'100%',
                     height:'100%',
-                    marginBottom:'10px'
+                    marginBottom:'8px'
                 }}
   
                 autoplay={true}
