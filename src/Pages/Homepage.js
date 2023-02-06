@@ -63,7 +63,7 @@ const Homepage = () => {
           laborum et nam officia atque, fugiat harum deleniti placeat natus!
         </div>
       </div>
-      <video controls className="w-[98%] block m-auto mb-6">
+      <video controls className="w-[98%] block m-auto mb-3">
         <source src={video} type="video/mp4"/>
       </video>
       <ImageGallery/>
