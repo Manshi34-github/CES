@@ -73,9 +73,9 @@ const Data = [
           {
             studentPic:
               aditya,
-            studentName: "Aditya Garg",
+            studentName: "Ayush Sinha",
             position: "Vice President",
-            email: "aditya.garg.civ19@itbhu.ac.in",
+            email: "ayush.sinha.civ20@itbhu.ac.in",
             linkedIn: "https://www.linkedin.com/in/aditya-garg-190/",
             contactNo: "7088335377",
           },
