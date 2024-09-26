@@ -1,14 +1,19 @@
 import React, { useState } from "react";
 import { BsChevronCompactLeft, BsChevronCompactRight } from "react-icons/bs";
 import { RxDotFilled } from "react-icons/rx";
+import Event from "../Images/upcoming_event.jpg";
+
 
 function ImageSlider() {
   const slides = [
     {
-      url: 'https://images.pexels.com/photos/2952834/pexels-photo-2952834.jpeg?auto=compress&cs=tinysrgb&w=600',
+      url: Event,
     },
     {
       url: 'https://images.pexels.com/photos/60230/pexels-photo-60230.jpeg?auto=compress&cs=tinysrgb&w=600',
+    },
+    {
+        url: Event,
     },
     {
       url: 'https://images.pexels.com/photos/382297/pexels-photo-382297.jpeg?auto=compress&cs=tinysrgb&w=600',
@@ -35,8 +40,9 @@ function ImageSlider() {
   };
 
   return (
-    <div className='max-w-[1400px] h-[700px] w-full m-auto py-16 px-4 relative group'>
-      <div style={{ backgroundImage: `url(${slides[currentIndex].url})` }} className='w-full h-full rounded-2xl bg-center bg-cover transition duration-200'>
+    <div className='max-w-auto h-[900px] w-full m-auto py-16 px-4 relative group'>
+ <div style={{ backgroundImage: `url(${slides[currentIndex].url})`, backgroundSize: 'cover' }} className='bg-cover bg-center w-full h-full rounded-2xl mx-auto transition duration-200'>
+
         {/* {left Arrow} */}
 
         {/* <div className=" pt-20  group-hover:block absolute top-[50%] -translate-x-0 translate-y-[50%] left-5 text-2xl rounded-full p-2bg-black/20 text-white cursor-pointer">
